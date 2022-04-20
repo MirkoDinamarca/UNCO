@@ -132,7 +132,7 @@ do {
                             }
                             break;
                         case 4:
-                            echo "Ingrese el teléfono: ";
+                            echo "Ingrese el apellido: ";
                             $telefono = trim(fgets(STDIN));
     
                             $viaje->modificarPasajero($numero, $telefono, $opcion);

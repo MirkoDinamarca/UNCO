@@ -1,5 +1,4 @@
 <?php
-include "../Ejercicio3/Libro.php";
 
 class Lectura {
     private $libro;
@@ -59,64 +58,52 @@ class Lectura {
      * @return array
      */
 
-    public function almacenandoLibros() {
-        echo "Ingrese el ISBN del libro: ";
-        $isbn = trim(fgets(STDIN));
-        echo "Ingrese el título: ";
-        $titulo = strtoupper(trim(fgets(STDIN)));
-        echo "Ingrese el año de edición: ";
-        $anio = trim(fgets(STDIN));
-        echo "Ingrese la editorial: ";
-        $editorial = trim(fgets(STDIN));
-        echo "¿Cuántas páginas tiene?: ";
-        $paginas = trim(fgets(STDIN));
-        echo "Dé una breve sinópsis del libro: ";
-        $sinopsis = trim(fgets(STDIN));
-
-        $libro = new Libro($isbn, $titulo, $anio, $editorial, $paginas, $sinopsis);
+    public function almacenandoLibros($libro) {
         $this->setBackupLibros($libro);
-
-        return $this->getBackupLibros();
     }
 
     // (Ejercicio5 - a)
-    public function libroLeido() {
-        var_dump($this->getBackupLibros());
+    public function libroLeido($titulo) {
 
-        /*
-        $contadorArreglo = count($this->getBackupLibros());
-
-        for ($i=0; $i < $contadorArreglo; $i++) { 
-            if ($titulo === $this->getBackupLibros()[$i]->getTitulo()) {
-                $libroLeido = true;
+        foreach ($this->getBackupLibros() as $key => $libro) {
+            if ($titulo === $libro->getTitulo()) {
+                $validacion = true;
             } else {
-                $libroLeido = false;
+                $validacion = false;
             }
         }
-        return $libroLeido;
-        // FOREACH para recorrer el array por cada objeto
-        */
+        return $validacion;
     }
 
     // (Ejercicio5 - b)
     public function darSinopsis($titulo) {
-        if (in_array($this->getLibro(), $this->getBackupLibros())) {
-
-        } else {
-            var_dump($this->getBackupLibros());
-            echo "El libro no se encuentra en la Backup\n";
+        foreach ($this->getBackupLibros() as $key => $libro) {
+            if ($titulo === $libro->getTitulo()) {
+                return $libro->getSinopsis();
+            } 
         }
-        // return $this->setLibro($titulo) . "\n";
     }
 
     // (Ejercicio5 - c)
     public function leidosAnioEdicion($x) {
-
+        $libros = [];
+        foreach ($this->getBackupLibros() as $key => $libro) {
+            if ($x === $libro->getanioEdicion()) {
+                $libros[] = $libro->getTitulo();
+            } 
+        }
+        return $libros;
     }
 
     // (Ejercicio5- d)
-    public function darLibrosPorAutor($nombreAutor) {
-
+    public function darLibrosPorAutor($autor) {
+        $libros = [];
+        foreach ($this->getBackupLibros() as $key => $libro) {
+            if ($autor === $libro->getNombreAutor()) {
+                $libros[] = $libro->getTitulo();
+            } 
+        }
+        return $libros;
     }
 
 

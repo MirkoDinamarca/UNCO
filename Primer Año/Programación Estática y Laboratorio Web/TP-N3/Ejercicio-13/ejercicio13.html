@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 13</title>
+</head>
+<body>
+    <h2>La Inmobiliaria</h2>
+    <form action="">
+        <label for="nombre">Nombre: </label>
+        <input type="text" name="nombre" placeholder="Ingrese su nombre" maxlength="25">
+        <br><br>
+        <label for="apellido">Apellido: </label>
+        <input type="text" name="apellido" placeholder="Ingrese su apellido" maxlength="25">
+        
+        <br><br>
+        <label for="direccion">Direccion:</label>
+        <br>
+        <textarea name="direccion" cols="30" rows="6" placeholder="Ingrese su dirección" maxlength="30"></textarea>
+        <br><br>
+
+        <label for="telefono">Teléfono:</label>
+        <input type="text" name="telefono" value="0299-" placeholder="Ingrese su número" maxlength="15">
+    
+        <br><br>
+
+        <h4>¿Compra o Alquila?</h4>
+        <p>Alquiler <input type="radio" name="inmobiliario"></p>
+        <p>Compra <input type="radio" name="inmobiliario"></p>
+        <br>
+        <h4>Zona</h4>
+
+        <p>Zona centro <input type="checkbox" name="centro" checked></p>
+        <p>Zona norte <input type="checkbox" name="norte"></p>
+        <p>Zona sur <input type="checkbox" name="sur" checked></p>
+        
+        <br><br>
+        <label for="comentario">Comentario del inmueble que busca:</label>
+        <br>
+        <textarea name="comentario" cols="30" rows="6" placeholder="Ingrese su comentario" maxlength="30"></textarea>
+        <br><br>
+
+        <input type="reset">
+        <input type="submit">
+        
+
+    </form>
+</body>
+</html>
