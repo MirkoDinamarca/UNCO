@@ -2,7 +2,7 @@
 
 class Mostrador {
     private $tipoTramite;
-    private $filaClientes;
+    private $filaClientes = [];
     private $tramites = [];
 
     public function __construct($tipoTramite, $filaClientes, /*$tramite*/)
@@ -35,6 +35,8 @@ class Mostrador {
 
     /**
      * (d)
+     * @param string $unTramite
+     * @return boolean
      */
 
     public function atiende($unTramite) {
@@ -45,6 +47,14 @@ class Mostrador {
             $boolean = false;
         }
         return $boolean;
+    }
+
+    /**
+     * (7-a)
+     */
+
+    public function ingresarTramite($tramite) {
+        echo "hola mundo";
     }
 
     public function __toString()
