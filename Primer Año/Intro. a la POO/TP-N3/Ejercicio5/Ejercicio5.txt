@@ -1,0 +1,15 @@
+Implemente una clase TestBanco que realice las siguientes operaciones:
+1. Crear un objeto de la clase Banco.
+
+2. Crear dos nuevos clientes Cliente1 y Cliente2, y agregarlos al banco.
+
+3. Crear dos Cuentas Corrientes, una asociada al cliente A y otra al cliente B, y agregarlas al Banco .
+
+4. Crear tres Cajas de Ahorro, dos asociadas al cliente A y una asociada al cliente B, y agregarlas al Banco.
+
+5. Depositar $300 en cada una de las Cajas de Ahorro.
+
+6. Transferir $150 de la Cuenta Corriente de Cliente1, a la Caja de Ahorro de Cliente2.
+
+7. Mostrar los datos de todas las cuentas.
+

@@ -1,0 +1,67 @@
+Se desea sistematizar la venta de un local de productos regionales e importados, la primer etapa de la
+sistematización involucra la obtención del precio de venta de un producto a partir de su código de barra y 
+el costo de todos los productos disponibles para la venta dentro del local.
+
+De los productos se almacena el código de barra, la descripción, el stock, el porcentaje de iva, el precio de
+compra y una referencia al rubro que pertenece. De cada rubro se almacena la descripción y el porcentaje de
+ganancia aplicado a los productos vinculados a ese rubro.
+
+El precio de venta de un producto se calcula sobre el precio de compra, más el porcentaje de ganancia en base
+a su rubro, más el porcentaje de IVA que se aplica al producto.
+
+Los productos del local pueden ser regionales o importados. Si son importados, el precio de venta se
+incrementa un 50 % y se agrega un impuesto del 10 % sobre el valor obtenido. Si son regionales se almacena
+un porcentaje de descuento que será aplicado al precio de venta. Implementar un método darPrecioVenta() que
+retorna el precio de venta de un producto y redefinirlo cuando sea necesario.
+
+De las Ventas se almacena la fecha, la referencia al producto o los productos y el cliente al que se le ha
+realizado la venta. El importe final de una venta normal se calcula en base a la cantidad de productos, por el
+importe del producto.
+
+El local almacena los productos que tiene disponible para la venta e implementa los siguientes métodos:
+
+    • incorporarProductoTienda(objProducto): método que recibe por parámetro un objeto Producto y verifica
+    que el código de barra no se encuentre dentro de la lista. Si el producto ya existe no es incorporado dentro
+    de la lista de productos de la tienda. El método retorna verdadero o falso según corresponda.
+
+    • retornarImporteProducto(codProducto): método que recibe por parámetro el código de un producto y
+    retorna el precio de venta.
+
+    • retornarCostoProductoTienda(): recorre todos los productos de la tienda y retorna la suma de los costos
+    de cada producto teniendo en cuenta el stock de cada uno.
+
+Definir la jerarquía de clases junto a los métodos y variables instancias de cada una de ellas. No olvidar
+realizar el diagrama de clases.
+
+Implementar cada una de las clases definidas con sus métodos de acceso para cada variable instancia y los
+métodos constructores según la definición de cada clase, y los métodos toString.
+
+Implementar el método darImporteVenta() que retorna el valor que debe ser abonado por el cliente.
+
+Implementar los métodos mencionados en el enunciado en la clase que corresponda y redefinirlos de ser
+necesario:darPrecioVenta(), incorporarProductoTienda(objProducto), retornarImporteProducto(codProducto), retornarCostoProductoTienda().
+
+Implementar la clase Local que contiene una colección de productos importados y una colección de productos
+regionales, la colección de ventas realizadas por la agencia. La clase cuenta con los siguientes métodos:
+
+    • productoMasEcomomico(rubro): método que retorna el producto más económico de un rubro.
+
+    • informarProductosMasVendidos(anio, n): retorna los n productos más vendidos en el año recibido
+    por parámetro.
+
+    • promedioVentasImportados(): método que retorna el promedio de ventas de productos importados
+    realizadas.
+
+    • informarConsumoCliente(tipoDoc,numDoc): método que retorna todos los productos que fueron
+    comprados por la persona identificada con el tipoDoc y numDoc recibidos por parámetro.
+
+Implementar un script Test_Tienda donde:
+    • Se crean 2 rubros: conservas con un 35 % de ganancia, regalos con un 55 % de ganancia.
+    • Se crean 4 instancias de la clase Producto y se vinculan a los rubros creados en el inciso anterior.
+    • Se incorpora cada instancia de la clase Producto a la Tienda.
+    • Se incorpora nuevamente la última instancia de producto incorporada a la tienda y visualizar el
+    resultado.
+    • Se retorna el precio de venta de cada uno de los productos creados.
+    • Se retorna el costo en productos que tiene hasta el momento la tienda.
+
+

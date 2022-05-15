@@ -1,13 +1,26 @@
 <?php
 
 include "Viaje.php";
+include "ViajeAereo.php";
+include "ViajeTerrestre.php";
 include "Pasajero.php";
 include "Responsable.php";
 
-$viaje = new Viaje(1, "Bariloche", 2);
+/* Viaje Aéreo con Ida y Vuelta, primera clase, 2 escalas */
+$viaje = new ViajeAereo(1, "EEUU", 4, 250, "ida", "vuelta", 23, true, "LATAM", 2);
+
+/* Viaje Aéreo con Ida, primera clase, sin escalas */
+// $viaje = new ViajeAereo(2, "Buenos Aires", 2, 140, "ida", "", 40, true, "Flybondi", 0);
+
+/* Viaje Terrestre con Ida y Vuelta, comodidad cama */
+// $viaje = new ViajeTerrestre(3, "San Martin de los Andes", 3, 105, "ida", "vuelta", "cama");
+
+/* Viaje Terrestre con Ida, comodidad semicama */
+// $viaje = new ViajeTerrestre(4, "Bariloche", 2, 80, "ida", "", "semicama");
 
 echo "--------------------------------------------------\n";
-echo "¡Bienvenido al Viaje! \n";
+echo "¡Bienvenido a la Empresa Viaje Feliz! \n";
+
 echo "Ingrese el nombre del responsable del viaje: ";
 $nombre = trim(fgets(STDIN));
 echo "Apellido: ";
@@ -26,7 +39,7 @@ do {
     echo "(1) Modificar el código\n";
     echo "(2) Modificar el destino\n";
     echo "(3) Modificar la cantidad máxima de pasajeros\n";
-    echo "(4) Agregar nuevos pasajeros\n";
+    echo "(4) Vender pasaje\n";
     echo "(5) Mostrar y/o modificar los datos de los pasajeros\n";
     echo "(6) Ver información sobre el viaje\n";
     echo "(7) Modificar responsable del viaje\n";
@@ -54,27 +67,22 @@ do {
             echo "La cantidad máxima ahora es de " . $viaje->getCantMaxPasajeros() . " pasajeros\n\n";
             break;
         case 4:
-            if (count($viaje->getPasajeros()) <= $viaje->getCantMaxPasajeros()) {
-                echo "Ingrese el nombre del pasajero: ";
-                $nombre = trim(fgets(STDIN));
-                echo "Su apellido: ";
-                $apellido = trim(fgets(STDIN));
-                echo "Su DNI: ";
-                $dni = trim(fgets(STDIN));
-                echo "Su Teléfono: ";
-                $telefono = trim(fgets(STDIN));
-                
-                if ($viaje->verificarDni($dni)) {
-                    echo "¡No pueden haber dos pasajeros iguales!\n\n";                                
-                } else {
-                    
-                    $pasajero = new Pasajero($nombre, $apellido, $dni, $telefono);
-        
-                    $viaje->agregarPasajeros($pasajero);
-                    echo "Pasajero agregado correctamente\n\n";
-                }
+            echo "Ingrese el nombre del pasajero: ";
+            $nombre = trim(fgets(STDIN));
+            echo "Su apellido: ";
+            $apellido = trim(fgets(STDIN));
+            echo "Su DNI: ";
+            $dni = trim(fgets(STDIN));
+            echo "Su Teléfono: ";
+            $telefono = trim(fgets(STDIN));
+
+            if ($viaje->verificarDni($dni)) {
+                echo "¡No pueden haber dos pasajeros iguales!\n\n";                                
             } else {
-                echo "¡La cantidad de pasajeros excede el límite de pasajero!\n\n";
+                
+                $pasajero = new Pasajero($nombre, $apellido, $dni, $telefono);
+                echo "Pasajero agregado correctamente, el importe total del pasaje fue de $" . $viaje->venderPasaje($pasajero) . "\n\n";
+
             }
             break;
         case 5:

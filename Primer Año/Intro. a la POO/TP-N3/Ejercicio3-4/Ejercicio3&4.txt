@@ -1,0 +1,28 @@
+(3)
+Defina una clase Banco con las siguiente variables instancias:
+
+1. coleccionCuentaCorriente: variable que contiene una colección de instancias de la clase Cuentas
+Corrientes.
+
+2. coleccionCajaAhorro: variable que contiene una colección de instancias de la clase Caja de Ahorro.
+
+3. ultimoValorCuentaAsignado: variable que contiene el ultimo valor asignado a una cuenta del banco.
+
+4. coleccionCliente: variable que contiene una colección de instancias de la clase Cliente
+
+==========================================================================================================================
+
+(4)
+En la clase Banco defina e implemente los siguientes métodos:
+
+1. incorporarCliente(objCliente): permite agregar un nuevo cliente al Banco
+
+2. incorporarCuentaCorriente(numeroCliente): Agregar una nueva Cuenta a la colección de 
+cuentas, verificando que el cliente dueño de la cuenta es cliente del Banco.
+
+3. incorporarCajaAhorro(numeroCliente):Agregar una nueva Caja de Ahorro a la colección de cajas de
+ahorro, verificando que el cliente dueño de la cuenta es cliente del Banco.
+
+4. realizarDeposito(numCuenta,monto): Dado un número de Cuenta y un monto, realizar depósito.
+
+5. realizarRetiro(numCuenta,monto): Dado un número de Cuenta y un monto, realizar retiro.
