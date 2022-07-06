@@ -59,7 +59,7 @@ $segundoCliente = new Cliente("Alejandro", "Martinez", "DNI", 41576872, 2);
 $tercerCliente = new Cliente("Gabriel", "Hernandez", "DNI", 42568675, 3);
 
 $primerVenta = new Venta(2018, $osito, $primerCliente);
-$segundaVenta = new Venta(2021, $mate, $segundoCliente);
+$segundaVenta = new Venta(2022, $mate, $segundoCliente);
 $tercerVenta = new Venta(2022, $aceitunas, $tercerCliente);
 $cuartaVenta = new Venta(2022, $osito, $tercerCliente);
 $quintaVenta = new Venta(2022, $osito, $tercerCliente);
@@ -69,7 +69,8 @@ $ventasTotal = [$primerVenta, $segundaVenta, $tercerVenta, $cuartaVenta, $quinta
 
 $tienda->setColeccionVentasAgencia($ventasTotal);
 
-print_r($tienda->informarProductosMasVendidos(2022, $aceitunas));
+echo "Los productos comprados son: \n";
+print_r($tienda->informarConsumoCliente("DNI", 42568675));
 
 
 

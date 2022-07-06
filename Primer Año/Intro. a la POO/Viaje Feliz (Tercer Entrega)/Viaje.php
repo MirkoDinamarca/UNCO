@@ -252,7 +252,7 @@ class Viaje {
             if ($this->getViajeIda() == "ida" && $this->getViajeVuelta() == "vuelta") {
                 $nuevoImporte = $this->getImporte() * 1.50;
                 $this->setImporte($nuevoImporte);
-                $this->agregarPasajeros($pasajero); // ? ESTO ESTÁ BIEN?
+                $this->agregarPasajeros($pasajero); // ? ESTO ESTÁ BIEN? Ya tengo una función para esto :I
             } else {
                 $nuevoImporte = $this->getImporte();
                 $this->agregarPasajeros($pasajero); // ? ESTO ESTÁ BIEN?

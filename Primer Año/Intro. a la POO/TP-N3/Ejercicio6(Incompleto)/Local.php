@@ -107,7 +107,16 @@ class Local {
      */
 
     public function informarProductosMasVendidos($anio, $n) {
-        // ? Ta dificil
+        $productosMasVendidos = [];
+
+        foreach ($this->getColeccionVentasAgencia() as $key => $venta) {
+            if ($venta->getFecha() == $anio) {
+                if (count($productosMasVendidos) <= $n) {
+                    // ? Cómo puedo recorrer el arreglo y que se vayan almacenando
+                    // ? los productos más vendidos en tal año?
+                }
+            }
+        }
     }
 
     /**
@@ -122,7 +131,7 @@ class Local {
             }
         }
         $this->getColeccionVentasAgencia();
-        // ? Falta terminar este método
+        // ? Falta terminar este método | ¿Cómo sacar el promedio en este caso?
 
     }
 
@@ -133,7 +142,15 @@ class Local {
      */
 
     public function informarConsumoCliente($tipoDoc, $numDoc) {
-        // ? Terminar Método
+        $productoComprado = [];
+
+        foreach ($this->getColeccionVentasAgencia() as $key => $venta) {
+            if ($venta->getCliente()->getTipoDNI() == $tipoDoc && $venta->getCliente()->getDni() == $numDoc) {
+                $productoComprado[] = $venta->getProductos();
+            }
+        }
+
+        return $productoComprado;
     }
 
     public function __toString()
